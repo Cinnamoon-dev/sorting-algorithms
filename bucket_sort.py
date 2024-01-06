@@ -1,3 +1,5 @@
+import math
+
 def bubble_sort(array):
     for i in range(0, len(array)):
         for j in range(0, len(array) - i - 1):
@@ -11,7 +13,7 @@ def bucket_sort(array):
     ordered_array = []
 
     for i in array:
-        buckets[int(len(array) * i)].append(i)
+        buckets[math.floor(len(array) * i)].append(i)
 
     for i in range(0, len(buckets)):
         buckets[i] = bubble_sort(buckets[i])
